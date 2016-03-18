@@ -1,6 +1,6 @@
 {
   "name": "socket.io-redux",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Redux middleware to emit action via socket.io.",
   "main": "build/index.js",
   "directories": {
