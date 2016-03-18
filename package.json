@@ -1,0 +1,38 @@
+{
+  "name": "socket.io-redux",
+  "version": "1.0.0",
+  "description": "Redux middleware to emit action via socket.io.",
+  "main": "build/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "babel lib --out-dir build",
+    "pretest": "npm run build",
+    "prepublish": "npm run test",
+    "test": "babel-node test/index.js | tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergiodxa/socket.io-redux.git"
+  },
+  "keywords": [
+    "redux",
+    "middleware",
+    "socket.io"
+  ],
+  "author": "Sergio Daniel Xalambrí <sergio@xalambri.com.ar> (http://sergio.xalambri.com.ar/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sergiodxa/socket.io-redux/issues"
+  },
+  "homepage": "http://sergio.xalambri.com.ar/socket.io-redux",
+  "devDependencies": {
+    "babel": "6.5.2",
+    "babel-cli": "6.6.5",
+    "babel-plugin-transform-es2015-arrow-functions": "6.5.2",
+    "babel-plugin-transform-es2015-modules-commonjs": "6.7.0",
+    "tap-spec": "4.1.1",
+    "tape": "4.5.1"
+  }
+}
