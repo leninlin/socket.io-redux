@@ -1,0 +1,6 @@
+{
+  "name": "Socket.io-redux",
+  "tagline": "Redux middleware to emit action via socket.io",
+  "body": "# socket.io-redux\r\nRedux middleware to emit action via socket.io.\r\n\r\n## API\r\n```javascript\r\nimport io from 'socket.io-client';\r\nimport { createStore, applyMiddleware } from 'redux';\r\n\r\nimport socketIO from 'socket.io-redux';\r\n\r\nimport reducer from './reducer';\r\n\r\nconst store = createStore(reducer, applyMiddleware(\r\n  socketIO(io.connect(process.env.NODE_ENV))\r\n));\r\n```\r\n* `socketIO` receive a `socket` instance created by `io.connect(url)`.\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}

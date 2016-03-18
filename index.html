@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Socket.io-redux by sergiodxa</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Socket.io-redux</h1>
+        <p>Redux middleware to emit action via socket.io</p>
+
+        <p class="view"><a href="https://github.com/sergiodxa/socket.io-redux">View the Project on GitHub <small>sergiodxa/socket.io-redux</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/sergiodxa/socket.io-redux/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/sergiodxa/socket.io-redux/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/sergiodxa/socket.io-redux">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="socketio-redux" class="anchor" href="#socketio-redux" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>socket.io-redux</h1>
+
+<p>Redux middleware to emit action via socket.io.</p>
+
+<h2>
+<a id="api" class="anchor" href="#api" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>API</h2>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-k">import</span> <span class="pl-smi">io</span> <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>socket.io-client<span class="pl-pds">'</span></span>;
+<span class="pl-k">import</span> { <span class="pl-smi">createStore</span>, <span class="pl-smi">applyMiddleware</span> } <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>redux<span class="pl-pds">'</span></span>;
+
+<span class="pl-k">import</span> <span class="pl-smi">socketIO</span> <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>socket.io-redux<span class="pl-pds">'</span></span>;
+
+<span class="pl-k">import</span> <span class="pl-smi">reducer</span> <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>./reducer<span class="pl-pds">'</span></span>;
+
+<span class="pl-k">const</span> <span class="pl-c1">store</span> <span class="pl-k">=</span> <span class="pl-en">createStore</span>(reducer, <span class="pl-en">applyMiddleware</span>(
+  <span class="pl-en">socketIO</span>(<span class="pl-smi">io</span>.<span class="pl-en">connect</span>(<span class="pl-c1">process</span>.<span class="pl-smi">env</span>.<span class="pl-c1">NODE_ENV</span>))
+));</pre></div>
+
+<ul>
+<li>
+<code>socketIO</code> receive a <code>socket</code> instance created by <code>io.connect(url)</code>.</li>
+</ul>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/sergiodxa">sergiodxa</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
