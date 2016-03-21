@@ -4,7 +4,7 @@ import socketIO from '../build/index';
 function next(action) { return action; }
 
 test('socket.io middleware', t => {
-  t.plan(2);
+  t.plan(3);
 
   const testAction = {
     type: 'ADD_NEW',
@@ -20,8 +20,10 @@ test('socket.io middleware', t => {
     emit(channel, data) {
       t.equals(channel, 'add:new', 'it should have the channel "add:new"');
       t.deepEquals(data, testAction, 'it should have the action as data');
-    }
-  }
+    },
+  };
 
-  socketIO(socket)()(next)(testAction);
+  const action = socketIO(socket)()(next)(testAction);
+
+  t.deepEquals(action, testAction, 'it should the return the passed action');
 });
