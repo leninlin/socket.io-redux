@@ -8,7 +8,8 @@ const socketIO = function (socket) {
     return function (next) {
       return function (action) {
         if (action.meta && action.meta.socket && action.meta.socket.channel) {
-          socket.emit(action.meta.socket.channel, action.meta.payload !== undefined ? action.meta.payload : action);
+          socket.emit(action.meta.socket.channel,
+            action.meta.socket.payload !== undefined ? action.meta.socket.payload : action);
         }
 
         return next(action);
