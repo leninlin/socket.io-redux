@@ -8,7 +8,6 @@
   },
   "scripts": {
     "lint": "eslint lib/index.js",
-    "prebuild": "npm run lint",
     "build": "babel lib --out-dir build",
     "pretest": "npm run build",
     "test": "babel-node test/index.js | tap-spec",
